@@ -1,0 +1,3 @@
+-- creating variables
+set @name = "Oshimaga";
+select @name;
