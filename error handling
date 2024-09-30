@@ -1,0 +1,61 @@
+-- error handler
+-- using continue
+
+select * from departments;
+drop procedure if exists insertDept;
+delimiter //
+create procedure insertDept(
+dept_id int, dept_name varchar(30)
+)
+begin
+	declare continue handler for 1062
+    begin
+		select concat('you are trying to enter a duplicate id', dept_id) as error;
+    end;
+	insert into departments
+	values (dept_id, dept_name);
+
+	select * from departments;
+end//
+
+call insertDept(101, 'mechanic');
+
+-----------------------------------------------------------------------------------------------------------------------
+
+-- error handler
+-- using continue
+
+
+select * from departments;
+drop procedure if exists insertDept;
+delimiter //
+create procedure insertDept(
+dept_id int, dept_name varchar(30)
+)
+begin
+	insert into departments
+	values (dept_id, dept_name);
+	select * from departments;
+end//
+delimiter;
+call insertDept(101, 'mechanic');
+
+-------------------------------------------------------------------------------------------------------------------------
+-- using function
+
+select * from departments;
+drop procedure if exists insertDept;
+delimiter //
+create procedure insertDept(
+dept_id int, dept_name varchar(30)
+)
+begin
+	insert into departments
+	values (dept_id, dept_name);
+	select * from departments;
+end//
+
+call insertDept(105, 'Information technology');
+
+
+
