@@ -1,0 +1,12 @@
+
+-- stored procedure to find the emp in the emp table
+-- PASSING 1 ARGUMENT
+
+delimiter //
+create procedure find_employee(in id int )
+begin
+	select * from employee_demographicS
+   	where employee_id = id;
+end//
+delimiter;
+call oshimaga.find_employee(4);
