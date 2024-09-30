@@ -1,3 +1,10 @@
+
+/*
+
+The main deference between functions and stored procedures are, 
+Functions can be called inside/inbetween the query but SP cannot be.
+
+*/
 select * from departments;
 select * from employee_salary;
 
