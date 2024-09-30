@@ -1,0 +1,59 @@
+
+-- create table emp_demographics
+
+CREATE TABLE employee_demographics (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    age INT,
+    gender ENUM('Male', 'Female', 'Other'),
+    dob DATE
+);
+
+-- insert data to a table
+
+INSERT INTO employee_demographics (employee_id, first_name, last_name, age, gender, dob) VALUES
+(1, 'Bob', 'Can', 30, 'Male', '1993-01-15'),
+(2, 'Jan', 'Flair', 40, 'Female', '1983-03-22'),
+(3, 'Tom', 'Ump', 36, 'Male', '1987-05-30'),
+(4, 'Jin', 'Harl', 29, 'Female', '1994-07-19'),
+(5, 'Karl', 'Link', 38, 'Male', '1985-09-11');
+
+------------------------------------------------------------------------------------------------
+
+-- create table employee_salary
+
+CREATE TABLE employee_salary (
+    emp_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    dept_id INT,
+    occupation VARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+
+-- insert data to a table
+
+INSERT INTO employee_salary (emp_id, first_name, last_name, dept_id, occupation, salary) VALUES
+(1, 'Bob', 'Can', 101, 'Engineer', 60000.00),
+(2, 'Jan', 'Flair', 102, 'Manager', 55000.00),
+(3, 'Tom', 'Ump', 101, 'Technician', 70000.00),
+(4, 'Jin', 'Harl', 103, 'HR', 80000.00),
+(5, 'Karl', 'Link', 102, 'Analyst', 65000.00);
+
+------------------------------------------------------------------------------------------------
+
+
+-- create a dept table
+
+CREATE TABLE departments (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50)
+);
+
+INSERT INTO departments (dept_id, dept_name) VALUES
+(101, 'Engineering'),
+(102, 'Management'),
+(103, 'Human Resources');
+
+------------------------------------------------------------------------------------------------
