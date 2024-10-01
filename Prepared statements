@@ -1,0 +1,18 @@
+
+-- prepared statements
+
+-- Prepare the statement
+SET @sql = 'INSERT INTO books (title, author, published_year) VALUES (?,?,?)';
+PREPARE stmt FROM @sql;
+
+-- Bind parameters
+SET @title = 'The bird';
+SET @author = 'Rein';
+set @P_Y= '1973';
+
+-- Execute the statement
+EXECUTE stmt USING @title, @author, @P_Y;
+
+-- Deallocate the prepared statement
+DEALLOCATE PREPARE stmt;
+select * from books;
